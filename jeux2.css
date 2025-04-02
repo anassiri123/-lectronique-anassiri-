@@ -21,22 +21,23 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 10px;
 }
 
-/* ✅ Styles de la grille de jeu */
+/* ✅ Styles de la grille de jeu responsive */
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 10px;
-    justify-content: center;
+    width: 100%;
+    max-width: 500px;
     margin-top: 20px;
 }
 
 /* ✅ Style des cartes */
 .card {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     background-color: #ddd;
     border: 2px solid #333;
     display: flex;
@@ -55,13 +56,13 @@ p {
     height: 100%;
     display: none;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .card.flipped img {
     display: block;
 }
 
-/* ✅ Assurer que les paires trouvées restent visibles */
 .card.matched img {
     display: block !important;
 }
@@ -110,7 +111,7 @@ button:hover {
 
 /* ✅ Style pour la vidéo des feux d'artifice 🎆 */
 #fireworksVideo {
-    display: none; /* Cachée par défaut */
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
