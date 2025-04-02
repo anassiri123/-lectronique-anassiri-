@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const matchSound = document.getElementById("matchSound");
 
     // ✅ Liste des images (Assure-toi qu'elles sont bien dans ton projet)
-    const animalImages = [
-  "jeuxmgprinsipal/chien.png", "jeuxmgprinsipal/chien2.png",
-  "jeuxmgprinsipal/dog.png", "jeuxmgprinsipal/dog2.png",
-  "jeuxmgprinsipal/tiger.png", "jeuxmgprinsipal/tiger2.png",
-  "jeuxmgprinsipal/cat.jpg", "jeuxmgprinsipal/cat2.jpg",
-  "jeuxmgprinsipal/lion.jpg", "jeuxmgprinsipal/lion2.jpg",
-  "jeuxmgprinsipal/elephant.jpg", "jeuxmgprinsipal/elephant2.jpg",
-  "jeuxmgprinsipal/panda.jpg", "jeuxmgprinsipal/panda2.jpg",
-  "jeuxmgprinsipal/Girafe.jpg", "jeuxmgprinsipal/Girafe2.jpg",
-  "jeuxmgprinsipal/singe.jpg", "jeuxmgprinsipal/singe2.jpg"
+const animalImages = [
+  "chien.png", "chien2.png",
+  "dog.png", "dog2.png",
+  "tiger.png", "tiger2.png",
+  "cat.jpg", "cat2.jpg",
+  "lion.jpg", "lion2.jpg",
+  "elephant.jpg", "elephant2.jpg",
+  "panda.jpg", "panda2.jpg",
+  "Girafe.jpg", "Girafe2.jpg",
+  "singe.jpg", "singe2.jpg"
 ];
 
     const gameImages = [...animalImages];
