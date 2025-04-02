@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de mémoire - Animaux</title>
+    <link rel="stylesheet" href="jeux2.css">
+</head>
+<body>
+
+    <h1>Jeu de mémoire - Trouve les paires</h1>
+    <p id="message">Regarde bien ! Les cartes vont se retourner après 5 secondes.</p>
+
+    <div class="game-container">
+        <div class="grid"></div>
+    </div>
+
+    <button id="restart">Rejouer</button>
+
+    <!-- 🎆 Feux d'artifice (Vidéo) -->
+    <video id="fireworksVideo" src="musique/videofeux.mp4" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: auto; z-index: 9999;" autoplay muted></video>
+
+    <!-- 🔊 Sons pour le jeu -->
+    <audio id="flipSound" src="jeuxmgprinsipal/flip.mp3"></audio>
+    <audio id="matchSound" src="jeuxmgprinsipal/match.mp3"></audio>
+<script src="jeux2.js"></script>
+</body>
+</html>
