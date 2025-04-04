@@ -134,6 +134,19 @@ if (niveau > 3) {
         }
     }
 
+  function getCartesPourNiveau(niveau) {
+  const pairesParNiveau = {
+    1: 4,  // 8 cartes
+    2: 6,  // 12 cartes
+    3: 9   // 18 cartes
+  };
+
+  const nombreDePaires = pairesParNiveau[niveau] || 4;
+
+  const cartes = animalImages.slice(0, nombreDePaires * 2);
+  return cartes;
+  }
+
     function createFireworksEffect(card1, card2) {
         for (let i = 0; i < 5; i++) { 
             setTimeout(() => {
@@ -153,18 +166,7 @@ if (niveau > 3) {
         }
     }
 
-function getCartesPourNiveau(niveau) {
-  const pairesParNiveau = {
-    1: 4,  // 8 cartes
-    2: 6,  // 12 cartes
-    3: 9   // 18 cartes
-  };
 
-  const nombreDePaires = pairesParNiveau[niveau] || 4;
-
-  const cartes = animalImages.slice(0, nombreDePaires * 2);
-  return cartes;
-}
 
     restartBtn.addEventListener("click", () => {
         createBoard();
