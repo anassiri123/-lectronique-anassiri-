@@ -97,7 +97,7 @@ card.addEventListener("click", flipCard);
     function flipCard() {
         if (isProcessing || this.classList.contains("flipped") || this.classList.contains("matched")) return;
 
-        this.classList.add("flipped");
+        this.classList.toggle("flipped");
         
         flipSound.play(); 
         flippedCards.push(this);
