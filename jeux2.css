@@ -129,6 +129,7 @@ button:hover {
   z-index: 9999;
 }
 
+/* Animation de bordure multicolore */
 @keyframes borderRainbow {
   0% { border-color: red; }
   20% { border-color: orange; }
@@ -138,8 +139,10 @@ button:hover {
   100% { border-color: violet; }
 }
 
-.card-inner {
-  animation: borderRainbow 3s infinite;
-  border: 3px solid red; /* valeur initiale */
+/* Appliquer à la bordure de la carte */
+.card {
+  animation: borderRainbow 5s infinite linear;
+  border: 3px solid red;
   border-radius: 10px;
+  transition: border-color 0.5s;
 }
