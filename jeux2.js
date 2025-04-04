@@ -54,23 +54,34 @@ if (niveau > 3) {
 
         gameImages.forEach((imageSrc) => {
             const card = document.createElement("div");
-            card.classList.add("card");
-            card.dataset.animal = imageSrc;
+card.classList.add("card");
+card.dataset.animal = imageSrc;
 
-            const img = document.createElement("img");
-            img.src = imageSrc;
-            img.alt = "Animal";
-            img.classList.add("show");
+const cardInner = document.createElement("div");
+cardInner.classList.add("card-inner");
 
-            img.onerror = () => {
-                console.error(`❌ Erreur : L'image ${imageSrc} ne s'est pas chargée.`);
-                img.src = "placeholder.png"; 
-            };
+const cardFront = document.createElement("div");
+cardFront.classList.add("card-front");
 
-            card.appendChild(img);
-            grid.appendChild(card);
-            card.addEventListener("click", flipCard);
-        });
+const cardBack = document.createElement("div");
+cardBack.classList.add("card-back");
+
+const img = document.createElement("img");
+img.src = imageSrc;
+img.alt = "Animal";
+
+img.onerror = () => {
+    console.error(`❌ Erreur : L'image ${imageSrc} ne s'est pas chargée.`);
+    img.src = "placeholder.png"; 
+};
+
+cardBack.appendChild(img);
+cardInner.appendChild(cardFront);
+cardInner.appendChild(cardBack);
+card.appendChild(cardInner);
+grid.appendChild(card);
+
+card.addEventListener("click", flipCard);
 
         message.textContent = "Regarde bien les cartes ! Elles vont se retourner après 5 secondes.";
 
