@@ -6,6 +6,7 @@ function afficherNiveau() {
 
 document.addEventListener("DOMContentLoaded", () => {
   afficherNiveau();
+
   const grid = document.querySelector(".grid");
   const message = document.getElementById("message");
   const restartBtn = document.getElementById("restart");
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (niveau > 3) {
       message.textContent = "Félicitations ! Tu as terminé tous les niveaux !";
 
-      // Bouton Rejouer spécial
+      // Modifier le style du bouton Rejouer
       restartBtn.textContent = "😊 Rejouer";
       restartBtn.style.backgroundColor = "#28a745";
       restartBtn.style.color = "white";
@@ -163,10 +164,10 @@ document.addEventListener("DOMContentLoaded", () => {
     niveau = 1;
     afficherNiveau();
 
-    // Rétablir le style d'origine du bouton
     restartBtn.textContent = "Rejouer";
     restartBtn.style.backgroundColor = "#007bff";
     restartBtn.style.color = "white";
+    restartBtn.style.border = "none";
     restartBtn.style.transform = "scale(1)";
     restartBtn.style.boxShadow = "none";
 
