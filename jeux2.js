@@ -17,30 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const matchSound = document.getElementById("matchSound");
 
   const animalImages = [
-    "chien.png", "chien2.png",
-    "dog.png", "dog2.png",
-    "tiger.png", "tiger2.png",
-    "cat.jpg", "cat2.jpg",
-    "lion.jpg", "lion2.jpg",
-    "elephant.jpg", "elephant2.jpg",
-    "panda.jpg", "panda2.jpg",
-    "Girafe.jpg", "Girafe2.jpg",
+    "chien.png", "chien2.png", "dog.png", "dog2.png",
+    "tiger.png", "tiger2.png", "cat.jpg", "cat2.jpg",
+    "lion.jpg", "lion2.jpg", "elephant.jpg", "elephant2.jpg",
+    "panda.jpg", "panda2.jpg", "Girafe.jpg", "Girafe2.jpg",
     "singe.jpg", "singe2.jpg"
   ];
 
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
 
   function getCartesPourNiveau(niveau) {
-    const pairesParNiveau = {
-      1: 4,
-      2: 6,
-      3: 9
-    };
+    const pairesParNiveau = { 1: 4, 2: 6, 3: 9 };
     const nombreDePaires = pairesParNiveau[niveau] || 4;
     return animalImages.slice(0, nombreDePaires * 2);
   }
@@ -89,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.addEventListener("click", flipCard);
     });
 
-    message.textContent = "Regarde bien les cartes ! Elles vont se retourner après 5 secondes.";
+    message.textContent = "Regarde bien ! Les cartes vont se retourner après 5 secondes.";
 
     setTimeout(() => {
       document.querySelectorAll(".card").forEach(card => {
@@ -106,9 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     flipSound.play();
     flippedCards.push(this);
 
-    if (flippedCards.length === 2) {
-      checkMatch();
-    }
+    if (flippedCards.length === 2) checkMatch();
   }
 
   function checkMatch() {
@@ -150,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const explosion = document.createElement("div");
         explosion.classList.add("firework-effect");
 
-        let rect = card1.getBoundingClientRect();
+        const rect = card1.getBoundingClientRect();
         explosion.style.left = `${rect.left + rect.width / 2}px`;
         explosion.style.top = `${rect.top + rect.height / 2}px`;
 
