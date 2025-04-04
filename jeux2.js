@@ -98,7 +98,7 @@ card.addEventListener("click", flipCard);
         if (isProcessing || this.classList.contains("flipped") || this.classList.contains("matched")) return;
 
         this.classList.add("flipped");
-        this.querySelector("img").classList.remove("hide"); 
+        
         flipSound.play(); 
         flippedCards.push(this);
 
