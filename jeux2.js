@@ -1,5 +1,12 @@
+
 let niveau = 1;
+
+function afficherNiveau() {
+  document.getElementById("niveau").textContent = niveau;
+}
 document.addEventListener("DOMContentLoaded", () => {
+
+afficherNiveau();
     const grid = document.querySelector(".grid");
     const message = document.getElementById("message");
     const restartBtn = document.getElementById("restart");
@@ -34,7 +41,12 @@ const animalImages = [
     }
 
     function createBoard() {
+if (niveau > 3) {
+  message.textContent = "Félicitations ! Tu as terminé tous les niveaux !";
+  return;
+}
         grid.innerHTML = "";
+        const gameImages =            getCartesPourNiveau(niveau);
         shuffle(gameImages);
         flippedCards = [];
         matchedPairs = 0;
@@ -100,10 +112,14 @@ const animalImages = [
 
             matchedPairs++;
 
-            if (matchedPairs === animalImages.length / 2) { 
-                message.textContent = "🎉 Bravo, tu as trouvé toutes les paires !";
-            }
-
+            if (matchedPairs === getCartesPourNiveau(niveau).length / 2) {
+    niveau++;
+    afficherNiveau();
+    message.textContent = "Bravo ! Tu passes au niveau " + niveau;
+    setTimeout(() => {
+        createBoard();
+    }, 3000);
+}
             flippedCards = [];
             isProcessing = false;
         } else {
@@ -143,3 +159,16 @@ const animalImages = [
 
     createBoard();
 });
+
+function getCartesPourNiveau(niveau) {
+  const pairesParNiveau = {
+    1: 4,  // 8 cartes
+    2: 6,  // 12 cartes
+    3: 9   // 18 cartes
+  };
+
+  const nombreDePaires = pairesParNiveau[niveau] || 4;
+
+  const cartes = animalImages.slice(0, nombreDePaires * 2);
+  return cartes;
+}
