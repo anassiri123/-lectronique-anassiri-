@@ -150,6 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  restartBtn.addEventListener("click", createBoard);
+  restartBtn.addEventListener("click", () => {
+  niveau = 1;
+  afficherNiveau();
   createBoard();
 });
