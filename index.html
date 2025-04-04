@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jeu de mémoire - Animaux</title>
-    <link rel="stylesheet" href="jeux2.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Jeu de mémoire - Animaux</title>
+  <link rel="stylesheet" href="jeux2.css">
 </head>
 <body>
 
-    <h1>Jeu de mémoire - Trouve les paires</h1>
-<p id="niveauAffiche">Niveau : <span id="niveau">1</span></p>
+  <h1>Jeu de mémoire - Trouve les paires</h1>
+  <p id="niveauAffiche">Niveau : <span id="niveau">1</span></p>
+  <p id="message">Regarde bien ! Les cartes vont se retourner après 5 secondes.</p>
 
-    <p id="message">Regarde bien ! Les cartes vont se retourner après 5 secondes.</p>
+  <div class="game-container">
+    <div class="grid"></div>
+  </div>
 
-    <div class="game-container">
-        <div class="grid"></div>
-    </div>
+  <button id="restart">Rejouer</button>
 
-    <button id="restart">Rejouer</button>
+  <!-- Sons -->
+  <audio id="flipSound" src="flip.mp3"></audio>
+  <audio id="matchSound" src="match.mp3"></audio>
 
-    <!-- 🎆 Feux d'artifice (Vidéo) -->
-    <video id="fireworksVideo" src="musique/videofeux.mp4" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80vw; height: auto; z-index: 9999;" autoplay muted></video>
+  <!-- Feux d’artifice -->
+  <video id="fireworksVideo" src="musique/videofeux.mp4" autoplay muted style="display: none;"></video>
 
-    <!-- 🔊 Sons pour le jeu -->
-    <audio id="flipSound" src="flip.mp3"></audio>
-    <audio id="matchSound" src="match.mp3"></audio>
-<script src="jeux2.js"></script>
+  <script src="jeux2.js"></script>
 </body>
 </html>
