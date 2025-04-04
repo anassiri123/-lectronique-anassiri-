@@ -1,3 +1,4 @@
+let niveau = 1;
 document.addEventListener("DOMContentLoaded", () => {
     const grid = document.querySelector(".grid");
     const message = document.getElementById("message");
