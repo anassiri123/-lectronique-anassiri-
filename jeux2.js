@@ -153,13 +153,6 @@ if (niveau > 3) {
         }
     }
 
-    restartBtn.addEventListener("click", () => {
-        createBoard();
-    });
-
-    createBoard();
-});
-
 function getCartesPourNiveau(niveau) {
   const pairesParNiveau = {
     1: 4,  // 8 cartes
@@ -172,3 +165,12 @@ function getCartesPourNiveau(niveau) {
   const cartes = animalImages.slice(0, nombreDePaires * 2);
   return cartes;
 }
+
+    restartBtn.addEventListener("click", () => {
+        createBoard();
+    });
+
+    createBoard();
+});
+
+
