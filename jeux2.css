@@ -9,6 +9,7 @@ body {
 
 h1 {
   color: #333;
+  margin-top: 20px;
 }
 
 p {
@@ -32,7 +33,7 @@ p {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
-  perspective: 1000px; /* pour effet 3D */
+  perspective: 1000px; /* effet 3D */
 }
 
 /* Carte */
@@ -43,13 +44,14 @@ p {
   perspective: 1000px;
 }
 
-/* Intérieur de la carte (pour flip 3D) */
+/* Intérieur de la carte */
 .card-inner {
   width: 100%;
   height: 100%;
   position: relative;
   transition: transform 0.6s ease;
   transform-style: preserve-3d;
+  border-radius: 10px;
 }
 
 .card.flipped .card-inner {
@@ -65,10 +67,11 @@ p {
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-front {
-  background-color: #ccc;
+  background-color: #ddd;
 }
 
 .card-back {
@@ -86,24 +89,32 @@ p {
 
 /* Carte matched */
 .card.matched .card-inner {
-  box-shadow: 0 0 10px #4caf50;
+  box-shadow: 0 0 15px #4caf50;
+  animation: blink 0.5s ease-in-out alternate infinite;
+}
+
+@keyframes blink {
+  0% { box-shadow: 0 0 10px #4caf50; }
+  100% { box-shadow: 0 0 20px #4caf50; }
 }
 
 /* Bouton */
 button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 18px;
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 /* Vidéo feu d’artifice */
