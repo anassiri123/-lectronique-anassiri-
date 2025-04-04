@@ -39,9 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createBoard() {
     if (niveau > 3) {
-      message.textContent = "Félicitations ! Tu as terminé tous les niveaux !";
-      return;
-    }
+  message.textContent = "Félicitations ! Tu as terminé tous les niveaux !";
+
+  // Personnaliser le bouton Rejouer
+  restartBtn.textContent = "😊 Rejouer";
+  restartBtn.style.backgroundColor = "#28a745"; // vert
+  restartBtn.style.color = "white";
+  restartBtn.style.border = "none";
+  restartBtn.style.transition = "0.3s";
+  restartBtn.style.transform = "scale(1.1)";
+  restartBtn.style.boxShadow = "0 0 10px rgba(0,0,0,0.2)";
+  return;
+}
 
     grid.innerHTML = "";
     const gameImages = getCartesPourNiveau(niveau);
@@ -153,5 +162,13 @@ document.addEventListener("DOMContentLoaded", () => {
   restartBtn.addEventListener("click", () => {
   niveau = 1;
   afficherNiveau();
+  
+  // Réinitialiser le style et texte du bouton
+  restartBtn.textContent = "Rejouer";
+  restartBtn.style.backgroundColor = "#007bff"; // couleur d'origine
+  restartBtn.style.color = "white";
+  restartBtn.style.transform = "scale(1)";
+  restartBtn.style.boxShadow = "none";
+
   createBoard();
 });
