@@ -128,3 +128,18 @@ button:hover {
   height: auto;
   z-index: 9999;
 }
+
+@keyframes borderRainbow {
+  0% { border-color: red; }
+  20% { border-color: orange; }
+  40% { border-color: yellow; }
+  60% { border-color: green; }
+  80% { border-color: blue; }
+  100% { border-color: violet; }
+}
+
+.card-inner {
+  animation: borderRainbow 3s infinite;
+  border: 3px solid red; /* valeur initiale */
+  border-radius: 10px;
+}
